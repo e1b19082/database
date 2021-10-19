@@ -13,17 +13,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import oit.is.z0209.db.database.model.Chamber;
-import oit.is.z0209.db.database.model.ChamberMapper;
+import oit.is.inudaisuki.springboot_samples.model.Chamber;
+import oit.is.inudaisuki.springboot_samples.model.ChamberMapper;
 //import oit.is.inudaisuki.springboot_samples.model.ChamberUser;
 //import oit.is.inudaisuki.springboot_samples.model.UserInfo;
 
 @Controller
 @RequestMapping("/sample4")
 public class Sample41Controller {
-
-  @Autowired
-  ChamberMapper chamberMapper;
 
     @GetMapping("step1")
     public String sample41() {
