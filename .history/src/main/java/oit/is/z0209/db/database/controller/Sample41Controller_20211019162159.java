@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import oit.is.z0209.db.database.model.Chamber;
 import oit.is.z0209.db.database.model.ChamberMapper;
-import oit.is.z0209.db.database.model.ChamberUser;
+//import oit.is.inudaisuki.springboot_samples.model.ChamberUser;
 //import oit.is.inudaisuki.springboot_samples.model.UserInfo;
 
 @Controller
