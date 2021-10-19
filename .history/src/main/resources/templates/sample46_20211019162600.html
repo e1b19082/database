@@ -21,14 +21,14 @@
       <td>身長:[[${chamberUser.height}]]</td>
     </tr>
   </div>
-  <p>
+  <P>
     あなたの身長を入力してください
   <form th:action="@{/sample4/step8}" method="post">
     <!-- stepで小数点以下何桁を入力させるか指定する-->
     <input type="number" step="0.1" name="height" />
     <input type="submit" value="登録"><input type="reset" value="リセット">
   </form>
-</p>
+  </P>
 </body>
 
 
