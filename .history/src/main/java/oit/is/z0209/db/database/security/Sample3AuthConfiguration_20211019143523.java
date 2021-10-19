@@ -22,7 +22,6 @@ public class Sample3AuthConfiguration extends WebSecurityConfigurerAdapter {
       // 平文のパスワードをエンコーダにかけてハッシュ化し，"user1"と関連付けている．ロール名は"USER"
       // プログラム中に素のパスワードが含まれることになるので望ましくない
       auth.inMemoryAuthentication().withUser("user1").password(passwordEncoder().encode("p@ss")).roles("USER");
-      auth.inMemoryAuthentication().withUser("user2").password(passwordEncoder().encode("pass")).roles("USER");
   
       // $ sshrun htpasswd -nbBC 10 admin adm1n
       // htpasswdでBCryptエンコードを行った後の文字列をパスワードとして指定している．
@@ -34,7 +33,6 @@ public class Sample3AuthConfiguration extends WebSecurityConfigurerAdapter {
     PasswordEncoder passwordEncoder() {
       return new BCryptPasswordEncoder();
     }
-
     /**
    * 認可処理に関する設定（認証されたユーザがどこにアクセスできるか）
    */
@@ -46,6 +44,7 @@ public class Sample3AuthConfiguration extends WebSecurityConfigurerAdapter {
     // antMatchers().authenticated がantMatchersへのアクセスに認証を行うことを示す
     // antMatchers()の他にanyRequest()と書くとあらゆるアクセス先を表現できる
     // authenticated()の代わりにpermitAll()と書くと認証処理が不要であることを示す
+    http.authorizeRequests().antMatchers("/sample3/**").authenticated();
     http.authorizeRequests().antMatchers("/sample4/**").authenticated();
 
     // Spring Securityの機能を利用してログアウト．ログアウト時は http://localhost:8000/ に戻る
